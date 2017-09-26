@@ -25,11 +25,9 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 
 	if (UGameplayStatics::SuggestProjectileVelocity(this, OutLaunchVelocity, StartLocation, HitLocation, LaunchSpeed, false, 0, 0, ESuggestProjVelocityTraceOption::DoNotTrace))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Arc found"));
 		auto AimDirection = OutLaunchVelocity.GetSafeNormal();
 		MoveBarrelTowards(AimDirection);
 	}
-	else UE_LOG(LogTemp, Warning, TEXT("No arc found"));
 }
 
 void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
