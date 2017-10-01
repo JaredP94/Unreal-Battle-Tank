@@ -40,6 +40,8 @@ private:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 	UTankBarrel* Barrel = nullptr;
+	float ReloadTimeInSeconds = 3.0f;
+	double LastFireTime = 0.0;
 
 	UPROPERTY(EditAnywhere, Category = Firing)
 	float LaunchSpeed = 100000;
