@@ -16,18 +16,3 @@ void ATank::BeginPlay()
 {
 	Super::BeginPlay();
 }
-
-void ATank::Fire()
-{
-	if (!ensure(Barrel)) return;
-
-	bool IsReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
-	
-	if (Barrel && IsReloaded)
-	{
-		auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("Projectile")), Barrel->GetSocketRotation(FName("Projectile")));
-		Projectile->LaunchProjectile(LaunchSpeed);
-		LastFireTime = FPlatformTime::Seconds();
-	}
-}
-
