@@ -21,6 +21,7 @@ class TANKBATTLEGAME_API UTankAimingComponent : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UTankAimingComponent();
+	virtual void BeginPlay() override;
 	void AimAt(FVector HitLocation);
 
 	UFUNCTION(BlueprintCallable, Category = "Setup")
@@ -31,14 +32,17 @@ public:
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
-	EFiringStatus FiringState = EFiringStatus::Aiming;
+	EFiringStatus FiringState = EFiringStatus::Reloading;
 
 private:
 	void MoveBarrelTowards(FVector AimDirection);
+	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	bool IsBarrelMoving();
 
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 	double LastFireTime = 0.0;
+	FVector AimDirection;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float LaunchSpeed = 100000;
