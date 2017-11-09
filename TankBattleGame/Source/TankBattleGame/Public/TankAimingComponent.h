@@ -23,6 +23,7 @@ public:
 	UTankAimingComponent();
 	virtual void BeginPlay() override;
 	void AimAt(FVector HitLocation);
+	EFiringStatus GetFiringStatus() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Setup")
 	void Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet);
