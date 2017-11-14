@@ -107,7 +107,7 @@ void UTankAimingComponent::Fire()
 	}
 }
 
-int UTankAimingComponent::GetRemainingRounds() const
+int32 UTankAimingComponent::GetRemainingRounds() const
 {
 	return RemainingRounds;
 }

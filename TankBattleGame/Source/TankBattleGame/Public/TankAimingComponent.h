@@ -32,7 +32,7 @@ public:
 	void Fire();
 
 	UFUNCTION(BlueprintCallable, Category = Firing)
-	int GetRemainingRounds() const;
+	int32 GetRemainingRounds() const;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "State")
@@ -48,15 +48,16 @@ private:
 	UTankTurret* Turret = nullptr;
 	double LastFireTime = 0.0;
 	FVector AimDirection;
-	int RemainingRounds = 5;
-
-	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-	float LaunchSpeed = 100000;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	TSubclassOf<AProjectile> ProjectileBlueprint;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	float LaunchSpeed = 100000;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3.0f;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 RemainingRounds = 5;
 };
