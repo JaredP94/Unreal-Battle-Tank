@@ -23,10 +23,14 @@ protected:
 private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	virtual void SetPawn(APawn* InPawn) override;
 	void AimTowardsCrosshair();
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& OutHitlocation) const;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
 
 	UPROPERTY(EditDefaultsOnly)
 	float CrossHairXLocation = 0.5;
