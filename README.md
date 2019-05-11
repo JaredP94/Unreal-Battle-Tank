@@ -10,9 +10,9 @@ Open-world head-to-head tank battle game including basic AI, terrain design, and
 
 ![FireExchange](TankBattleGame/Saved/Screenshots/Windows//HighresScreenshot00006.png)
 
-![AttackTurret](TankBattleGame/Saved/Screenshots/Windows//HighresScreenshot000011.png)
+![AttackTurret](TankBattleGame/Saved/Screenshots/Windows//HighresScreenshot00011.png)
 
-![Turret](TankBattleGame/Saved/Screenshots/Windows//HighresScreenshot000012.png)
+![Turret](TankBattleGame/Saved/Screenshots/Windows//HighresScreenshot00012.png)
 
 ![ProjectileImpact](TankBattleGame/Saved/Screenshots/Windows//HighresScreenshot00008.png)
 
